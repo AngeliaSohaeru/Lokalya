@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokalya - Main</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Main Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Top Banner */
+        .banner {
+            width: 100%;
+            height: 120px;
+            background: #6a7d5a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .banner-left {
+            display: flex;
+            align-items: center;
+        }
+        .banner-left img {
+            height: 100px;
+            margin-right: 20px;
+        }
+        .banner-left h1 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .banner-right .user-btn {
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /* Main Content */
+        .content-container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+        }
+        .greeting {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .greeting h2 {
+            font-size: 28px;
+            color: #6a7d5a;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            color: #6a7d5a;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer-section h3 {
+            margin-bottom: 10px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        .footer-section ul li a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="banner">
+        <div class="banner-left">
+            <img src="img/lokalya.png" alt="Lokalya Logo">
+            <h1>LOKALYA</h1>
+        </div>
+        <div class="banner-right">
+            <button class="user-btn">Hi, [User]</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-container">
+        <div class="greeting">
+            <h2>Welcome, [User]!</h2>
+            <p>Explore the best of Indonesia with Lokalya’s unique features.</p>
+        </div>
+        <div class="features-grid">
+            <!-- Personalized Trips -->
+            <div class="feature-card">
+                <h3>Personalized Trips</h3>
+                <p>Get custom itineraries tailored to your interests. From mountains to beaches, we suggest destinations that fit your style.</p>
+            </div>
+            <!-- Public Statistics -->
+            <div class="feature-card">
+                <h3>Public Statistics</h3>
+                <p>See real-time data on the hottest tourist spots, visitor counts, and local events.</p>
+            </div>
+            <!-- Recommended Destinations -->
+            <div class="feature-card">
+                <h3>Recommended Destinations</h3>
+                <p>Browse our curated list of must-visit places, from hidden gems to iconic landmarks.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-section">
+            <h3>Policy</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Explore Features</h3>
+            <ul>
+                <li><a href="#">Personalized Trips</a></li>
+                <li><a href="#">Recommended Destinations</a></li>
+            </ul>
+        </div>
+        <p>© 2024 Lokalya. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
