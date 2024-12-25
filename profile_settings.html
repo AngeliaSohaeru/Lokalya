@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lokalya - Profile Settings</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        .navbar {
+            background: #6a7d5a;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .welcome { font-size: 18px; }
+        .navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 { text-align: center; color: #6a7d5a; }
+        .feedback { padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .success { background: #e0ffe0; color: #006600; }
+        .error { background: #ffe0e0; color: #cc0000; }
+        label { display: block; margin: 15px 0 5px; font-weight: 600; }
+        input[type="text"], input[type="email"], input[type="date"] {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;
+        }
+        button {
+            width: 100%; padding: 12px; background: #6a7d5a; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;
+        }
+        button:hover { background: #5b6c4d; }
+        .back-link { text-align: center; margin-top: 20px; }
+        .back-link a { color: #0066cc; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="welcome">
+            Welcome, John Doe!
+        </div>
+        <div class="nav-links">
+            <a href="main.html">Main Page</a>
+            <a href="logout.html">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Profile Settings</h2>
+
+        <!-- Example feedback messages -->
+        <div class="feedback success">Profile updated successfully!</div>
+        <!-- Uncomment below to display an error message -->
+        <!-- <div class="feedback error">Error updating profile. Please try again.</div> -->
+
+        <form action="profile_settings.html" method="post">
+            <!-- Email (read-only) -->
+            <label for="email">Email (cannot be changed):</label>
+            <input type="email" id="email" name="email" value="johndoe@example.com" readonly>
+
+            <!-- Full Name (editable) -->
+            <label for="full_name">Full Name:</label>
+            <input type="text" id="full_name" name="full_name" value="John Doe" required>
+
+            <!-- Birthday (editable) -->
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday" value="1990-01-01">
+
+            <button type="submit">Save Changes</button>
+        </form>
+
+        <div class="back-link">
+            <a href="main.html">← Back to Main Page</a>
+        </div>
+    </div>
+</body>
+</html>
