@@ -1,36 +1,3 @@
-<?php
-session_start();
-
-// Check if user is logged in; if not, redirect to index
-if (!isset($_SESSION['user_id'])) {
-    header('Location: index.html');
-    exit();
-}
-
-// Connect to the database
-$conn = new mysqli('localhost', 'root', '', 'lokalya_db');
-if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
-}
-
-// Fetch booking history for the logged-in user
-$user_id = $_SESSION['user_id'];
-
-$sql = "SELECT id, destination, travel_date, num_travelers, preferences, created_at 
-        FROM bookings WHERE user_id = ?";
-$stmt = $conn->prepare($sql);
-if ($stmt === false) {
-    die('Prepare failed: ' . htmlspecialchars($conn->error));
-}
-$stmt->bind_param('i', $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
-$bookings = $result->fetch_all(MYSQLI_ASSOC);
-
-$stmt->close();
-$conn->close();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -205,7 +172,7 @@ $conn->close();
         <div class="banner-right">
             <div class="user-dropdown">
                 <button class="user-btn">
-                    Hi, <?= htmlspecialchars($_SESSION['full_name']) ?> ▼
+                    Hi, User ▼
                 </button>
                 <div class="user-dropdown-content">
                     <a href="profile_settings.php">Profile Settings</a>
@@ -220,30 +187,32 @@ $conn->close();
     <!-- Main Content -->
     <div class="content-container">
         <h2>Booking History</h2>
-        <?php if (!empty($bookings)): ?>
-            <table>
-                <tr>
-                    <th>Booking ID</th>
-                    <th>Destination</th>
-                    <th>Travel Date</th>
-                    <th>Travelers</th>
-                    <th>Preferences</th>
-                    <th>Created At</th>
-                </tr>
-                <?php foreach ($bookings as $booking): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($booking['id']) ?></td>
-                        <td><?= htmlspecialchars($booking['destination']) ?></td>
-                        <td><?= htmlspecialchars($booking['travel_date']) ?></td>
-                        <td><?= htmlspecialchars($booking['num_travelers']) ?></td>
-                        <td><?= htmlspecialchars($booking['preferences']) ?></td>
-                        <td><?= htmlspecialchars($booking['created_at']) ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php else: ?>
-            <p class="no-history">You have no booking history yet.</p>
-        <?php endif; ?>
+        <table>
+            <tr>
+                <th>Booking ID</th>
+                <th>Destination</th>
+                <th>Travel Date</th>
+                <th>Travelers</th>
+                <th>Preferences</th>
+                <th>Created At</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Bali</td>
+                <td>2024-01-15</td>
+                <td>2</td>
+                <td>Beachfront villa</td>
+                <td>2024-01-01 10:00:00</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Yogyakarta</td>
+                <td>2024-02-20</td>
+                <td>4</td>
+                <td>Hotel near Malioboro</td>
+                <td>2024-01-10 12:00:00</td>
+            </tr>
+        </table>
     </div>
 
     <!-- Footer -->
