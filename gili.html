@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Gili Islands</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .banner {
+            background: #6a7d5a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .banner-left {
+            display: flex;
+            align-items: center;
+        }
+        .banner-left img {
+            height: 80px;
+            margin-right: 20px;
+        }
+        .banner-left h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #6a7d5a;
+            margin-bottom: 15px;
+        }
+        .fun-facts ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .rating-stats ul {
+            list-style: none;
+            padding: 0;
+        }
+        .rating-stats ul li {
+            margin-bottom: 5px;
+        }
+        .average-rating {
+            font-size: 20px;
+            color: #6a7d5a;
+            font-weight: bold;
+        }
+        textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background: #6a7d5a;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background: #5b6c4d;
+        }
+        .review-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .rating {
+            color: #ffc107;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="banner">
+        <div class="banner-left">
+            <img src="img/lokalya.png" alt="Lokalya Logo">
+            <h1>LOKALYA</h1>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <img src="img/gili.jpg" alt="The Gili Islands">
+        <h2>Introduction</h2>
+        <p>
+            The Gili Islands, located off the coast of Lombok, Indonesia, are a tropical paradise. Known for their crystal-clear waters, white sandy beaches, and vibrant coral reefs, they offer a perfect getaway for travelers seeking serenity and adventure.
+        </p>
+
+        <h2>Fun Facts</h2>
+        <div class="fun-facts">
+            <ul>
+                <li>There are three main islands: Gili Trawangan, Gili Meno, and Gili Air.</li>
+                <li>No motorized vehicles are allowed on the islands – travel is by bicycle or horse-drawn carts.</li>
+                <li>They are a hotspot for scuba diving and snorkeling enthusiasts.</li>
+            </ul>
+        </div>
+
+        <h2>Rating Statistics</h2>
+        <div class="rating-stats">
+            <p class="average-rating">Average Rating: 4.5/5.0</p>
+            <ul>
+                <li>⭐5: 120 reviews</li>
+                <li>⭐4: 80 reviews</li>
+                <li>⭐3: 20 reviews</li>
+                <li>⭐2: 5 reviews</li>
+                <li>⭐1: 3 reviews</li>
+            </ul>
+        </div>
+
+        <!-- Book the Trip Button -->
+        <h2>Book the Trip</h2>
+        <p>Ready to experience the beauty of the Gili Islands? Click the button below to book your trip now!</p>
+        <form action="#">
+            <button type="submit">Book the Trip</button>
+        </form>
+
+        <h2>Leave Your Rating and Review</h2>
+        <form action="#">
+            <label for="rating">Rating (1 to 5):</label>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>Select your rating</option>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+            </select>
+
+            <label for="review">Your Review:</label>
+            <textarea id="review" name="review" rows="5" placeholder="Share your experience..." required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <h2>All Reviews</h2>
+        <div class="review-item">
+            <div class="rating">⭐ 5/5.0</div>
+            <div>Great experience! The islands were breathtaking!</div>
+        </div>
+        <div class="review-item">
+            <div class="rating">⭐ 4/5.0</div>
+            <div>Loved it, but it was a bit crowded.</div>
+        </div>
+        <div class="review-item">
+            <div class="rating">⭐ 3/5.0</div>
+            <div>Nice place but the weather was not great during my visit.</div>
+        </div>
+    </div>
+</body>
+</html>
